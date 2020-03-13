@@ -8,6 +8,7 @@
     <string name="menu_home">Home</string>
     <string name="menu_timetable">Timetable</string>
     <string name="menu_map">Map</string>
+    <string name="menu_events">Events</string>
     <string name="title_activity_bottom_nav_">BottomNav_Activity</string>
 
 </resources>

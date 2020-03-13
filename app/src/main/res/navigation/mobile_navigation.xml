@@ -22,4 +22,10 @@
         android:name="com.example.brunel_maps.ui.maps.MapFragment"
         android:label="Brunel Maps"
         tools:layout="@layout/fragment_map" />
+
+    <fragment
+        android:id="@+id/nav_events"
+        android:name="com.example.brunel_maps.ui.events.EventsFragment"
+        android:label="Events"
+        tools:layout="@layout/fragment_events" />
 </navigation>
