@@ -9,9 +9,9 @@ public class EventBean {
     private String title;
     private String time;
     private String place;
-    private String path;
+    private int path;
 
-    public EventBean(String title, String time, String place, String path) {
+    public EventBean(String title, String time, String place, int path) {
         this.title = title;
         this.time = time;
         this.place = place;
@@ -42,11 +42,11 @@ public class EventBean {
         this.place = place;
     }
 
-    public String getPath() {
+    public int getPath() {
         return path;
     }
 
-    public void setPath(String path) {
+    public void setPath(int path) {
         this.path = path;
     }
 

@@ -74,7 +74,9 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.MyViewHold
         holder.tv_wenzi.setText(mDataList.get(position).getTitle());
         holder.tv_place.setText(mDataList.get(position).getPlace());
         holder.tv_time.setText(mDataList.get(position).getTime());
-        Glide.with(mContext).load(mDataList.get(position).getPath()).into( holder.iv);
+        holder.tv_title.setText("Taking Up Space  .............");
+        holder.iv.setImageResource(mDataList.get(position).getPath());
+       // Glide.with(mContext).load(mDataList.get(position).getPath()).into( holder.iv);
         /*
          *
          * 监听事件
@@ -143,6 +145,7 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.MyViewHold
         TextView tv_wenzi;
         TextView tv_place;
         TextView tv_time;
+        TextView tv_title;
         ImageView iv;
         View view;
         public MyViewHolder(View itemView) {
@@ -151,6 +154,7 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.MyViewHold
             tv_wenzi=itemView.findViewById(R.id.tv_wenzi);
             tv_place=itemView.findViewById(R.id.tv_place);
             tv_time=itemView.findViewById(R.id.tv_time);
+            tv_title=itemView.findViewById(R.id.tv_title);
             iv=itemView.findViewById(R.id.iv);
 
         }

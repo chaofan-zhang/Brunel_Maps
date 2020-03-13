@@ -40,9 +40,11 @@ public class EventsFragment extends Fragment {
         Date date = new Date(System.currentTimeMillis());
         String format = simpleDateFormat.format(date);
         List<EventBean> list = new ArrayList<>();
-        for (int i = 0; i < 10; i++) {
-            list.add(new EventBean("West London higher education", format, "China", "https://public-1254365843.cos.ap-beijing.myqcloud.com/illustration/share/00021802_List_Picture.jpg"));
-        }
+
+        list.add(new EventBean("West London higher education exhibition 2020", "30 Mar 2020, 12:00- 16:00", "National Trust,Sutton House", R.mipmap.one));
+        list.add(new EventBean("West London higher education exhibition 2020", "16 Mar 2020, 09:30 - 15:00", "Antonin Artaud Theatre", R.mipmap.two));
+        list.add(new EventBean("West London higher education exhibition 2020", "11 Mar 2020 to 12 Mar 2020", "Brunel University London", R.mipmap.th));
+
 
         EventsAdapter adapter = new EventsAdapter(getContext(), list);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
