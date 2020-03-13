@@ -35,15 +35,14 @@ public class EventsFragment extends Fragment {
 
     public void initData() {
 
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy年MM月dd日 HH:mm:ss");// HH:mm:ss
-        //获取当前时间
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy.MM.dd HH:mm:ss");// HH:mm:ss
         Date date = new Date(System.currentTimeMillis());
         String format = simpleDateFormat.format(date);
         List<EventBean> list = new ArrayList<>();
 
-        list.add(new EventBean("West London higher education exhibition 2020", "30 Mar 2020, 12:00- 16:00", "National Trust,Sutton House", R.mipmap.one));
+        list.add(new EventBean("Taking Up Space", "30 Mar 2020, 12:00- 16:00", "National Trust,Sutton House", R.mipmap.one));
         list.add(new EventBean("West London higher education exhibition 2020", "16 Mar 2020, 09:30 - 15:00", "Antonin Artaud Theatre", R.mipmap.two));
-        list.add(new EventBean("West London higher education exhibition 2020", "11 Mar 2020 to 12 Mar 2020", "Brunel University London", R.mipmap.th));
+        list.add(new EventBean("Mixed Reality in Cultural Heritage Symposium", "11 Mar 2020 to 12 Mar 2020", "Brunel University London", R.mipmap.th));
 
 
         EventsAdapter adapter = new EventsAdapter(getContext(), list);

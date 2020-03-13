@@ -75,11 +75,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     }
 
-    /**
-     * 通过下标显示和隐藏fragment
-     *
-     * @param position
-     */
     public void showFragmentByIndex(int position) {
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
         for (int i = 0; i < fragmentList.size(); i++) {

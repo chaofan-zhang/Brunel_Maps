@@ -29,11 +29,7 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.MyViewHold
         this.mContext = context;
         this.mDataList = dataList;
     }
-    /*
-     *
-     * 另一种实现监听事件的实现方式采用接口回调的方式
-     *
-     * */
+
     public interface OnItemClickListener{
         public void onItemClickListener(int position);
         public void onItemLongClickListener(int position);
@@ -47,41 +43,21 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.MyViewHold
         this.onItemClickListener=onItemClickListener;
     }
 
-    /*
-     *
-     *
-     * 创建viewHolder
-     * 这个主要作用就是找到item布局
-     * 把布局里面有用的控件与Viewholder进行关联
-     *
-     *
-     * */
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view= LayoutInflater.from(mContext).inflate(R.layout.itemevent_layout,parent,false);
         return new MyViewHolder(view);
     }
-    /*
-     *
-     *
-     * 绑定viewholder
-     * 主要是数据源与viewHolder的绑定
-     * 这里可以实现监听事件
-     *
-     * */
+
     @Override
     public void onBindViewHolder(MyViewHolder holder, final int position) {
         holder.tv_wenzi.setText(mDataList.get(position).getTitle());
         holder.tv_place.setText(mDataList.get(position).getPlace());
         holder.tv_time.setText(mDataList.get(position).getTime());
-        holder.tv_title.setText("Taking Up Space  .............");
+        holder.tv_title.setText("");
         holder.iv.setImageResource(mDataList.get(position).getPath());
        // Glide.with(mContext).load(mDataList.get(position).getPath()).into( holder.iv);
-        /*
-         *
-         * 监听事件
-         *这是一种方式实现监听事件
-         * */
+
        /* holder.view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -95,11 +71,6 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.MyViewHold
             }
         });*/
 
-        /*
-         *
-         * 接口回调方式实现监听事件
-         *
-         * */
         holder.view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -126,21 +97,11 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.MyViewHold
 
     }
 
-    /*
-     *
-     * 获取数据源条数
-     *
-     * */
     @Override
     public int getItemCount() {
         return mDataList.size();
     }
-    /*
-     *
-     * viewholder与布局中的控件关联
-     * view代表一个item
-     *
-     * */
+
     public class MyViewHolder extends RecyclerView.ViewHolder {
         TextView tv_wenzi;
         TextView tv_place;
